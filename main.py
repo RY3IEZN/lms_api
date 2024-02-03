@@ -20,7 +20,7 @@ app = FastAPI(
     },
 )
 
-
+# import the routers
 app.include_router(users.router)
 app.include_router(courses.router)
 app.include_router(sections.router)

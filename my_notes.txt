@@ -4,3 +4,20 @@ install poetry for package management
 $Env:Path += ";C:\Users\Uneku Ejiga\AppData\Roaming\Python\Scripts"; setx PATH "$Env:Path"
 
 #create folders for routes and api and logics
+
+
+
+--- database ---
+alembic for data migration ot the db
+alembic is good but you have to check and be sure
+
+for enums you have to manually create enums in the db
+CREATE TYPE contenttype AS ENUM ('lesson', 'quiz', 'assignment');
+CREATE TYPE role AS ENUM ('teacher', 'student');
+
+before you do migrations make sure to drop the db and recreate it back
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+"postgresql://pg_user:passwd@host_ip:5432/fastapilmsdb"
+--- database ---

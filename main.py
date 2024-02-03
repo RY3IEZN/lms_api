@@ -1,9 +1,16 @@
-from fastapi import FastAPI, Path, Query
-from pydantic import BaseModel
-from typing import Optional, List
+from fastapi import FastAPI
 
 # user imports
 from api import users, courses, sections
+
+# import dbs
+from db.db_setup import engine
+from db.models import user, course
+
+# models
+user.Base.metadata.create_all(bind=engine)
+course.Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="Fast Api for lms",

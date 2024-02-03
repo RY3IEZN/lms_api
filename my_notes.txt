@@ -1,0 +1,3 @@
+install poetry for package management
+
+$Env:Path += ";C:\Users\Uneku Ejiga\AppData\Roaming\Python\Scripts"; setx PATH "$Env:Path"

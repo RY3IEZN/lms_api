@@ -1,3 +1,6 @@
 install poetry for package management
 
+# add to path windows
 $Env:Path += ";C:\Users\Uneku Ejiga\AppData\Roaming\Python\Scripts"; setx PATH "$Env:Path"
+
+#create folders for routes and api and logics

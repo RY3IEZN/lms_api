@@ -10,7 +10,6 @@ This project is aimed at developing a robust API for a Learning Management Syste
 
 - **User Management**: CRUD operations for managing users (students, instructors, administrators).
 - **Course Management**: CRUD operations for managing courses.
-- **Authentication & Authorization**: Secure endpoints based on authentication and role-based access control.
 
 ## Technologies Used
 
@@ -42,9 +41,8 @@ This project is aimed at developing a robust API for a Learning Management Syste
 
 - **id**: Integer (Primary Key)
 - **username**: String
-- **password_hash**: String
 - **email**: String
-- **role**: String (Enum: "student", "instructor", "admin")
+- **role**: String (Enum: "student", "teacher")
 
 ### Courses
 
@@ -80,4 +78,4 @@ This project is aimed at developing a robust API for a Learning Management Syste
 
 ## Conclusion
 
-This API project provides a scalable and efficient solution for managing a Learning Management System. With FastAPI's speed and flexibility, it ensures high performance and ease of development for building robust APIs.
+This API project provides a scalable and efficient solution for managing a Learning Management System. With FastAPI's speed and flexibility, it ensures high performance and ease of development for building robust APIss.

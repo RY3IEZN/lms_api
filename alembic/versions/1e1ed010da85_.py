@@ -6,6 +6,8 @@ Create Date: 2024-02-03 16:18:10.519696
 
 """
 
+import json
+import os
 from typing import Sequence, Union
 
 from alembic import op
@@ -33,6 +35,12 @@ def upgrade() -> None:
         "users",
         sa.Column("role", sa.Enum("teacher", "student", name="role"), nullable=True),
     )
+    # not working for some reason
+    with open(os.path.join(os.path.dirname(__file__), "../data/students.json")) as f:
+        student_data = f.read()
+    # not working for some reason
+    op.bulk_insert("users", json.loads(student_data))
+
     op.create_index(op.f("ix_users_id"), "users", ["id"], unique=False)
     op.create_table(
         "courses",

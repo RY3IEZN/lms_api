@@ -16,8 +16,13 @@ CREATE TYPE contenttype AS ENUM ('lesson', 'quiz', 'assignment');
 CREATE TYPE role AS ENUM ('teacher', 'student');
 
 before you do migrations make sure to drop the db and recreate it back
+___DONT DO IN PROD____
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
 "postgresql://pg_user:passwd@host_ip:5432/fastapilmsdb"
+
+again, had to manually insert data into the table
 --- database ---
+
+wth is pydantic

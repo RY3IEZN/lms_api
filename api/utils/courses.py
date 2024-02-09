@@ -21,3 +21,8 @@ def create_course(db: Session, course: CourseCreate):
     db.commit()
     db.refresh(db_course)
     return db_course
+
+
+def get_user_course(db: Session, user_id: int):
+    courses = db.query(Course).filter(Course.user_id == user_id).all()
+    return courses

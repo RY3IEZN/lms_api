@@ -10,17 +10,20 @@ from api.utils.courses import get_course, get_courses, create_course
 router = fastapi.APIRouter()
 
 
+# get all courses
 @router.get("/courses", response_model=List[Course])
 async def read_courses(db: Session = Depends(get_db)):
     courses = get_courses(db=db)
     return courses
 
 
+#  creare  anew course
 @router.post("/courses", response_model=Course)
 async def create_new_course(course: CourseCreate, db: Session = Depends(get_db)):
     return create_course(db=db, course=course)
 
 
+# get course by id
 @router.get("/courses/{course_id}")
 async def read_course(course_id: int, db: Session = Depends(get_db)):
     db_courses = get_course(db=db, course_id=course_id)

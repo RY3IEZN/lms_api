@@ -5,8 +5,11 @@ from sqlalchemy.orm import Session
 
 
 from api.utils.users import get_user, get_user_by_email, get_users, create_user
+
+from api.utils.courses import get_user_course
 from db.db_setup import get_db
 from pydantic_shemas.user import UserCreate, User
+from pydantic_shemas.course import Course
 
 router = fastapi.APIRouter()
 
@@ -34,3 +37,10 @@ async def read_user(user_id: int, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=404, detail="user not found")
     return db_user
+
+
+# get coureses by userid or assigned to a user
+@router.get("/users/{user_id}/courses", response_model=List[Course])
+async def read_user_course(user_id: int, db: Session = Depends(get_db)):
+    courses = get_user_course(user_id=user_id, db=db)
+    return courses

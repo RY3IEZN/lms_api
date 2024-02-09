@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # set up db using progress
-SQLALCHEMY_DATABASE_URL = "postgresql://pg_user:passwd@host_ip:5432/fastapilmsdb"
+SQLALCHEMY_DATABASE_URL = "postgresql://<user>:<pwd>@<hostip>:5432/db_name"
 
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={}, future=True)
